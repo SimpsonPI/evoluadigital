@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método 5D® - Guia Institucional para Desenvolvimento de Cursos com IA</title>
+    <title>Método 5D® | Guia Institucional para Desenvolvimento de Cursos com IA</title>
+    <meta name="description" content="Guia institucional do Método 5D® para planejamento e desenvolvimento de cursos profissionais com Inteligência Artificial.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3a8a">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -225,14 +228,14 @@
 
     <div class="container">
         
-        <div class="nav-tabs">
-            <button class="nav-tab active" onclick="showSection('parte1')">Parte I: Identidade e Fundamentos</button>
-            <button class="nav-tab" onclick="showSection('parte2')">Parte II: Desenvolvimento e Arquitetura</button>
-            <button class="nav-tab" onclick="showSection('parte3')">Parte III & IV: Integração IA e Padrões</button>
+        <div class="nav-tabs" role="tablist" aria-label="Seções do guia">
+            <button class="nav-tab active" type="button" id="tab-parte1" role="tab" aria-selected="true" aria-controls="parte1" data-section="parte1">Parte I: Identidade e Fundamentos</button>
+            <button class="nav-tab" type="button" id="tab-parte2" role="tab" aria-selected="false" aria-controls="parte2" data-section="parte2">Parte II: Desenvolvimento e Arquitetura</button>
+            <button class="nav-tab" type="button" id="tab-parte3" role="tab" aria-selected="false" aria-controls="parte3" data-section="parte3">Parte III & IV: Integração IA e Padrões</button>
         </div>
 
         <!-- PARTE 1 -->
-        <div id="parte1" class="section-card content-section">
+        <section id="parte1" class="section-card content-section" role="tabpanel" aria-labelledby="tab-parte1">
             <h2>Parte I: Identidade Institucional e Fundamentos do Método 5D®</h2>
             <p>O <strong>Método 5D®</strong> é uma metodologia inovadora desenvolvida para orientar o planejamento, a criação e a execução de cursos de qualificação profissional. Seu principal objetivo é alinhar a prática educacional às demandas dinâmicas do mercado de trabalho e às transformações impulsionadas pela Inteligência Artificial.</p>
             
@@ -249,10 +252,10 @@
 
             <h3>Filosofia Educacional</h3>
             <p>A filosofia do método estabelece que aprender significa desenvolver competências capazes de gerar resultados concretos. A Inteligência Artificial atua como uma <strong>ferramenta estratégica de apoio</strong> ao processo de aprendizagem, e não como um fim em si mesma. O instrutor assume o papel central de facilitador, estimulando o pensamento crítico, a autonomia e a resolução colaborativa de problemas.</p>
-        </div>
+        </section>
 
         <!-- PARTE 2 -->
-        <div id="parte2" class="section-card content-section" style="display: none;">
+        <section id="parte2" class="section-card content-section" role="tabpanel" aria-labelledby="tab-parte2" hidden>
             <h2>Parte II: Desenvolvimento de Cursos e Arquitetura Pedagógica</h2>
             <p>O núcleo operacional do Método 5D® estrutura o ciclo de vida completo de um projeto educacional através de 5 etapas fundamentais, apoiadas por pilares sólidos e por uma arquitetura pedagógica robusta.</p>
 
@@ -312,10 +315,10 @@
 
             <h3>Modelo de Maturidade (Níveis 1 a 5)</h3>
             <p>Os cursos são classificados de acordo com sua complexidade para adequar linguagem e profundidade: <strong>Nível 1 (Fundamental)</strong> para introdução aos temas; <strong>Nível 2 (Básico)</strong> para competências práticas essenciais; <strong>Nível 3 (Intermediário)</strong> para autonomia e estudos de caso; <strong>Nível 4 (Avançado)</strong> para tomada de decisão e cenários complexos; e <strong>Nível 5 (Especialista)</strong> para liderança de projetos, consultoria e formação de multiplicadores.</p>
-        </div>
+        </section>
 
         <!-- PARTE 3 -->
-        <div id="parte3" class="section-card content-section" style="display: none;">
+        <section id="parte3" class="section-card content-section" role="tabpanel" aria-labelledby="tab-parte3" hidden>
             <h2>Parte III & IV: Integração de IA, Padrões e Apresentação Comercial</h2>
             <p>A versão 2.0 do guia institucional incorpora diretrizes avançadas para o uso seguro de Inteligência Artificial e modelos comerciais focados na demonstração de valor para instituições contratantes.</p>
 
@@ -347,7 +350,7 @@
 
             <h3 style="margin-top: 2rem;">Considerações Finais</h3>
             <p>O Método 5D® consolida-se como um padrão de excelência na educação profissional, unindo rigor pedagógico, clareza estrutural e inovação tecnológica sustentável para o desenvolvimento contínuo de pessoas e organizações.</p>
-        </div>
+        </section>
 
     </div>
 
@@ -356,21 +359,25 @@
     </footer>
 
     <script>
+        const tabs = document.querySelectorAll('.nav-tab');
+        const sections = document.querySelectorAll('.content-section');
+
         function showSection(sectionId) {
-            // Esconde todas as seções
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(sec => sec.style.display = 'none');
+            sections.forEach((section) => {
+                section.hidden = section.id !== sectionId;
+            });
 
-            // Remove a classe active de todas as abas
-            const tabs = document.querySelectorAll('.nav-tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-
-            // Mostra a seção selecionada
-            document.getElementById(sectionId).style.display = 'block';
-
-            // Adiciona a classe active na aba clicada
-            event.currentTarget.classList.add('active');
+            tabs.forEach((tab) => {
+                const isActive = tab.dataset.section === sectionId;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', String(isActive));
+                tab.tabIndex = isActive ? 0 : -1;
+            });
         }
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => showSection(tab.dataset.section));
+        });
     </script>
 
 </body>

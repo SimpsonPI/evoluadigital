@@ -12,6 +12,10 @@ html {
     scroll-behavior: smooth;
 }
 
+[id] {
+    scroll-margin-top: 90px;
+}
+
 body {
     font-family: 'Inter', Arial, sans-serif;
     color: #1f2937;
@@ -27,6 +31,12 @@ img {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #1976d2;
+    outline-offset: 3px;
 }
 
 ul {
@@ -156,6 +166,23 @@ section {
     font-size: 1.5rem;
     cursor: pointer;
     color: #0b3d91;
+}
+
+.main-nav > a:not(.nav-link) {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background: #0b3d91;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.main-nav > a:not(.nav-link):hover {
+    background: #1976d2;
 }
 
 

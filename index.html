@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lincoln Simpson | IA Aplicada, Empregabilidade e Capacitação Profissional</title>
     <meta name="description" content="Cursos, treinamentos, palestras e soluções de capacitação em Inteligência Artificial Aplicada, Empregabilidade, Inclusão Digital e desenvolvimento profissional.">
+    <meta name="author" content="Lincoln Simpson">
+    <meta name="keywords" content="IA aplicada, inteligência artificial, empregabilidade, inclusão digital, capacitação profissional, cursos, palestras, workshops">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b3d91">
+    <link rel="canonical" href="./">
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
     
     <!-- Open Graph para Redes Sociais -->
     <meta property="og:title" content="Lincoln Simpson | Qualificação Prática e Tecnologia">
     <meta property="og:description" content="Soluções de capacitação com aplicação prática de Inteligência Artificial, tecnologia e desenvolvimento profissional.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="./">
+    <meta property="og:site_name" content="Lincoln Simpson">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lincoln Simpson | Qualificação Prática e Tecnologia">
+    <meta name="twitter:description" content="Soluções de capacitação com aplicação prática de Inteligência Artificial, tecnologia e desenvolvimento profissional.">
+    <meta name="twitter:image" content="hero-bg.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" href="assets/monograma-ls.svg" type="image/svg+xml">
+    <!-- O ativo legado assets/monograma-ls.svg não está no repositório. -->
+    <link rel="icon" href="logo.png" type="image/png">
     
     <!-- Fontes e Ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +37,18 @@
     
     <!-- CSS Customizado -->
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Lincoln Simpson",
+      "description": "Capacitação profissional em Inteligência Artificial Aplicada, empregabilidade e inclusão digital.",
+      "image": "hero-bg.jpg",
+      "email": "professorlincolnsimpson@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Teresina", "addressRegion": "PI", "addressCountry": "BR" },
+      "sameAs": ["https://www.linkedin.com/in/lincolnsimpson77/"]
+    }
+    </script>
 </head>
 <body>
 
@@ -29,15 +56,16 @@
     <header class="header" id="header">
         <div class="container header-container">
             <a href="#inicio" class="logo">
-                <img src="assets/logo.png" alt="Lincoln Simpson Logo" class="logo-img">
+                <!-- O ativo legado assets/logo.png não está no repositório. -->
+                <img src="logo.png" alt="Lincoln Simpson" class="logo-img" width="600" height="600" decoding="async">
                 <span class="sr-only">Lincoln Simpson</span>
             </a>
             
-            <button class="mobile-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-toggle" type="button" aria-label="Abrir menu" aria-controls="main-navigation" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
 
-            <nav class="main-nav">
+            <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
                 <ul class="nav-list">
                     <li><a href="#inicio" class="nav-link">INÍCIO</a></li>
                     <li><a href="#sobre" class="nav-link">SOBRE</a></li>
@@ -48,7 +76,7 @@
                     <li><a href="#materiais" class="nav-link">MATERIAIS</a></li>
                     <li><a href="#contato" class="nav-link">CONTATO</a></li>
                 </ul>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header">SOLICITAR PROPOSTA</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" target="_blank" rel="noopener noreferrer">SOLICITAR PROPOSTA</a>
             </nav>
         </div>
     </header>
@@ -60,7 +88,7 @@
                 <div class="hero-content">
                     <span class="badge">EDUCADOR E FACILITADOR EM IA APLICADA | EMPREGABILIDADE | INCLUSÃO DIGITAL</span>
                     <h1 class="hero-title">QUALIFICAÇÃO PRÁTICA E TECNOLOGIA TRANSFORMANDO CARREIRAS E ORGANIZAÇÕES.</h1>
-                    <h2 class="hero-subtitle">Cursos, treinamentos, palestras, workshops e soluções de capacitação com aplicação prática de Inteligência Artificial, tecnologia e desenvolvimento profissional.</h2>
+                    <p class="hero-subtitle">Cursos, treinamentos, palestras, workshops e soluções de capacitação com aplicação prática de Inteligência Artificial, tecnologia e desenvolvimento profissional.</p>
                     <p class="hero-text">Transformo conhecimento e tecnologia em soluções práticas para o desenvolvimento de pessoas, equipes e organizações.</p>
                     
                     <div class="hero-actions">                        
@@ -98,7 +126,8 @@
         <section id="sobre" class="about">
             <div class="container about-container">
                 <div class="about-image">
-                    <img src="assets/foto-profissional.jpg" alt="Lincoln Simpson - Perfil Profissional">
+                    <!-- O ativo legado assets/profile-photo.jpg não está no repositório. -->
+                    <img src="foto-profissional.jpg" alt="Lincoln Simpson — perfil profissional" width="720" height="720" loading="lazy" decoding="async">
                 </div>
                 <div class="about-content">
                     <h2>SOBRE LINCOLN SIMPSON</h2>
@@ -130,44 +159,44 @@
                 <div class="cards-grid cols-3">
                     <div class="card">
                         <i class="fas fa-users-cog card-icon-sm"></i>
-                        <h4>2. PALESTRAS</h4>
+                        <h3>PALESTRAS</h3>
                         <p>Temas focados em IA, futuro do trabalho, empregabilidade, tecnologia, inclusão digital e desenvolvimento profissional.</p>
-                        <a href="#" class="btn-link link-proposta">TENHO INTERESSE <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" class="btn-link link-proposta" target="_blank" rel="noopener noreferrer">TENHO INTERESSE <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
 
                     <div class="card">
                         <i class="fas fa-laptop-code card-icon-sm"></i>
-                        <h4>3. WORKSHOPS E OFICINAS</h4>
+                        <h3>WORKSHOPS E OFICINAS</h3>
                         <p>Experiências práticas, interativas e aplicadas diretamente à realidade dos participantes e da organização.</p>
-                        <a href="#" class="btn-link link-proposta">SOLICITAR PROPOSTA <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" class="btn-link link-proposta" target="_blank" rel="noopener noreferrer">SOLICITAR PROPOSTA <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
 
                     <div class="card">
                         <i class="fas fa-graduation-cap card-icon-sm"></i>
-                        <h4>4. CURSOS PROFISSIONALIZANTES</h4>
+                        <h3>CURSOS PROFISSIONALIZANTES</h3>
                         <p>Cursos completos estruturados para instituições, empresas e programas de qualificação focados no mercado.</p>
-                        <a href="#" class="btn-link link-proposta">TENHO INTERESSE <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" class="btn-link link-proposta" target="_blank" rel="noopener noreferrer">TENHO INTERESSE <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
 
                     <div class="card">
                         <i class="fas fa-book-open card-icon-sm"></i>
-                        <h4>5. MATERIAIS DIDÁTICOS</h4>
+                        <h3>MATERIAIS DIDÁTICOS</h3>
                         <p>Criação personalizada de apostilas, apresentações, guias, materiais educacionais e conteúdos para capacitação.</p>
-                        <a href="#" class="btn-link link-proposta">SOLICITAR PROPOSTA <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" class="btn-link link-proposta" target="_blank" rel="noopener noreferrer">SOLICITAR PROPOSTA <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
 
                     <div class="card">
                         <i class="fas fa-briefcase card-icon-sm"></i>
-                        <h4>6. PROGRAMAS DE EMPREGABILIDADE</h4>
+                        <h3>PROGRAMAS DE EMPREGABILIDADE</h3>
                         <p>Soluções estruturadas para primeiro emprego, recolocação, desenvolvimento profissional e inclusão digital.</p>
-                        <a href="#" class="btn-link link-proposta">SOLICITAR PROPOSTA <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" class="btn-link link-proposta" target="_blank" rel="noopener noreferrer">SOLICITAR PROPOSTA <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
 
                     <div class="card">
                         <i class="fas fa-brain card-icon-sm"></i>
-                        <h4>7. INTELIGÊNCIA ARTIFICIAL APLICADA</h4>
+                        <h3>INTELIGÊNCIA ARTIFICIAL APLICADA</h3>
                         <p>Capacitação prática para utilização de IA no trabalho, educação, produtividade, empregabilidade e processos.</p>
-                        <a href="#" class="btn-link link-proposta">TENHO INTERESSE <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" class="btn-link link-proposta" target="_blank" rel="noopener noreferrer">TENHO INTERESSE <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -212,7 +241,8 @@
                 
                 <div class="method-actions mt-4">
                     <a href="#contato" class="btn btn-primary">CONHECER O MÉTODO 5D®</a>
-                    <a href="documentos/metodo-5d.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">BAIXAR APRESENTAÇÃO DO MÉTODO 5D® <i class="fas fa-download"></i></a>
+                    <!-- O PDF legado documentos/metodo-5d.pdf não está no repositório; o guia HTML permanece disponível. -->
+                    <a href="metodo_5d.html" class="btn btn-outline-light">VER GUIA DO MÉTODO 5D® <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>
@@ -233,7 +263,7 @@
                         <p class="desc">Desenvolva competências práticas para utilizar ferramentas de IA e aumentar sua empregabilidade.</p>
                         <div class="card-footer">
                             <span class="status active">Disponível</span>
-                            <a href="#" class="btn btn-sm btn-outline-primary">CONHECER CURSO</a>
+                            <a href="#contato" class="btn btn-sm btn-outline-primary">CONHECER CURSO</a>
                         </div>
                     </div>
 
@@ -245,7 +275,7 @@
                         <p class="desc">Aprenda a automatizar tarefas e otimizar rotinas de trabalho utilizando Inteligência Artificial.</p>
                         <div class="card-footer">
                             <span class="status active">Disponível</span>
-                            <a href="#" class="btn btn-sm btn-outline-primary link-proposta">SOLICITAR PROPOSTA</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" class="btn btn-sm btn-outline-primary link-proposta" target="_blank" rel="noopener noreferrer">SOLICITAR PROPOSTA</a>
                         </div>
                     </div>
 
@@ -257,7 +287,7 @@
                         <p class="desc">Aprimore sua escrita corporativa e crie e-mails, relatórios e documentos com o apoio da IA.</p>
                         <div class="card-footer">
                             <span class="status waitlist">Em Breve</span>
-                            <a href="#" class="btn btn-sm btn-outline-primary">QUERO SER AVISADO</a>
+                            <a href="#contato" class="btn btn-sm btn-outline-primary">QUERO SER AVISADO</a>
                         </div>
                     </div>
 
@@ -269,7 +299,7 @@
                         <p class="desc">Técnicas modernas de relacionamento, negociação e fechamento de vendas.</p>
                         <div class="card-footer">
                             <span class="status active">Disponível</span>
-                            <a href="#" class="btn btn-sm btn-outline-primary link-proposta">SOLICITAR PROPOSTA</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" class="btn btn-sm btn-outline-primary link-proposta" target="_blank" rel="noopener noreferrer">SOLICITAR PROPOSTA</a>
                         </div>
                     </div>
 
@@ -281,7 +311,7 @@
                         <p class="desc">Capacitação completa para excelência no atendimento em múltiplos canais digitais e voz.</p>
                         <div class="card-footer">
                             <span class="status active">Disponível</span>
-                            <a href="#" class="btn btn-sm btn-outline-primary">CONHECER CURSO</a>
+                            <a href="#contato" class="btn btn-sm btn-outline-primary">CONHECER CURSO</a>
                         </div>
                     </div>
 
@@ -293,7 +323,7 @@
                         <p class="desc">Domine os fundamentos da informática e as principais ferramentas para o mercado de trabalho.</p>
                         <div class="card-footer">
                             <span class="status active">Disponível</span>
-                            <a href="#" class="btn btn-sm btn-outline-primary link-proposta">SOLICITAR PROPOSTA</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX_kaMUjCFFCl350RHIQEEZTeSc56F6rrpZlG6OhpNmEZq8Q/viewform?usp=header" class="btn btn-sm btn-outline-primary link-proposta" target="_blank" rel="noopener noreferrer">SOLICITAR PROPOSTA</a>
                         </div>
                     </div>
                 </div>
@@ -355,8 +385,8 @@
                                 <span>PDF • Apresentação completa</span>
                             </div>
                             <div class="doc-actions">
-                                <a href="documentos/portfolio-profissional.pdf" target="_blank" class="btn btn-sm btn-outline-secondary">VISUALIZAR</a>
-                                <a href="documentos/portfolio-profissional.pdf" download class="btn btn-sm btn-primary">BAIXAR</a>
+                                <a href="Portfolio_Soluções%20Educacionais_Lincoln_Simpson.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary">VISUALIZAR</a>
+                                <a href="Portfolio_Soluções%20Educacionais_Lincoln_Simpson.pdf" download class="btn btn-sm btn-primary">BAIXAR</a>
                             </div>
                         </div>
                         <div class="doc-item">
@@ -364,10 +394,7 @@
                                 <h5>Apresentação Institucional</h5>
                                 <span>PDF • Visão geral para empresas</span>
                             </div>
-                            <div class="doc-actions">
-                                <a href="documentos/apresentacao-institucional.pdf" target="_blank" class="btn btn-sm btn-outline-secondary">VISUALIZAR</a>
-                                <a href="documentos/apresentacao-institucional.pdf" download class="btn btn-sm btn-primary">BAIXAR</a>
-                            </div>
+                            <!-- O arquivo documentos/apresentacao-institucional.pdf não está no repositório. -->
                         </div>
                     </div>
 
@@ -379,8 +406,8 @@
                                 <span>PDF • Prompts que ajudam na busca ao primeiro emprego</span>
                             </div>
                             <div class="doc-actions">
-                                <a href="documentos/Guia de Prompts com IA.pdf" target="_blank" class="btn btn-sm btn-outline-secondary">VISUALIZAR</a>
-                                <a href="documentos/Guia de Prompts com IA.pdf" download class="btn btn-sm btn-primary">BAIXAR</a>
+                                <a href="Guia%20de%20Prompts%20com%20IA.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary">VISUALIZAR</a>
+                                <a href="Guia%20de%20Prompts%20com%20IA.pdf" download class="btn btn-sm btn-primary">BAIXAR</a>
                             </div>
                         </div>
                     </div>
@@ -392,10 +419,7 @@
                                 <h5>Catálogo de Cursos</h5>
                                 <span>PDF • Ementas e trilhas de aprendizagem</span>
                             </div>
-                            <div class="doc-actions">
-                                <a href="documentos/catalogo-cursos.pdf" target="_blank" class="btn btn-sm btn-outline-secondary">VISUALIZAR</a>
-                                <a href="documentos/catalogo-cursos.pdf" download class="btn btn-sm btn-primary">BAIXAR</a>
-                            </div>
+                            <!-- O arquivo documentos/catalogo-cursos.pdf não está no repositório. -->
                         </div>
                     </div>
 
@@ -469,7 +493,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="assets/logo-light.svg" alt="Lincoln Simpson Logo" class="footer-logo">
+                    <!-- O ativo legado assets/logo-light.svg não está no repositório. -->
+                    <img src="Logo%20Lincoln%20Simpson.png" alt="Lincoln Simpson" class="footer-logo" width="600" height="600" loading="lazy" decoding="async">
                     <h4>LINCOLN SIMPSON</h4>
                     <p>Facilitador em IA Aplicada | Empregabilidade | Inclusão Digital.</p>
                     <p class="text-sm mt-2"><i class="fas fa-map-marker-alt"></i> Teresina, Piauí - Brasil</p>
