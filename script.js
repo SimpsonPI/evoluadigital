@@ -29,6 +29,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const setCurrentNavLink = (currentLink) => {
+        navLinks.forEach((link) => {
+            if (link === currentLink) {
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+    };
+
+    const methodLink = Array.from(navLinks).find((link) => link.getAttribute('href') === 'metodo_5d.html');
+    if (window.location.pathname.endsWith('metodo_5d.html') && methodLink) {
+        setCurrentNavLink(methodLink);
+    } else {
+        const sectionLinks = Array.from(navLinks).filter((link) => link.getAttribute('href')?.startsWith('#'));
+        const sections = sectionLinks
+            .map((link) => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+            .filter(({ section }) => section);
+
+        if ('IntersectionObserver' in window && sections.length) {
+            const observer = new IntersectionObserver((entries) => {
+                const visibleEntry = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+                if (!visibleEntry) return;
+
+                const match = sections.find(({ section }) => section === visibleEntry.target);
+                if (match) setCurrentNavLink(match.link);
+            }, { rootMargin: '-25% 0px -60% 0px', threshold: [0.1, 0.5] });
+
+            sections.forEach(({ section }) => observer.observe(section));
+        }
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.addEventListener('click', (event) => {
             const targetId = link.getAttribute('href');

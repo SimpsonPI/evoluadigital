@@ -159,6 +159,10 @@ section {
     color: #1976d2;
 }
 
+.nav-link[aria-current="page"] {
+    color: #1976d2;
+}
+
 .mobile-toggle {
     display: none;
     border: 0;
