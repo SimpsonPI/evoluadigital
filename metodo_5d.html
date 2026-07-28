@@ -18,210 +18,9 @@
     <meta name="twitter:description" content="Guia institucional para desenvolvimento de cursos profissionais com Inteligência Artificial.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #0284c7;
-            --accent: #f59e0b;
-            --bg-color: #f8fafc;
-            --text-color: #334155;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 0;
-        }
-
-        .method-hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .method-hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-        }
-
-        .method-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #cbd5e1;
-            font-weight: 300;
-        }
-
-        .author-badge {
-            display: inline-block;
-            margin-top: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: #e2e8f0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .method-guide-container {
-            max-width: 1200px;
-            margin: -2rem auto 4rem auto;
-            padding: 0 1.5rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .nav-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-tab {
-            background: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary);
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .nav-tab:hover, .nav-tab.active {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
-        }
-
-        .section-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 3rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-            border: 1px solid var(--border-color);
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 3px solid var(--secondary);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            color: #0f172a;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: #475569;
-        }
-
-        ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-            color: #475569;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .feature-box {
-            background: #f8fafc;
-            border-left: 4px solid var(--secondary);
-            padding: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            border-top: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .feature-box h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        th {
-            background-color: var(--primary);
-            color: white;
-            font-weight: 600;
-        }
-
-        tr:hover {
-            background-color: #f1f5f9;
-        }
-
-        .highlight-quote {
-            background: #eff6ff;
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: #1e40af;
-        }
-
-        @media (max-width: 768px) {
-            .method-hero h1 { font-size: 2rem; }
-            .section-card { padding: 1.5rem; }
-        }
-    </style>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="method-guide">
 
     <!-- CABEÇALHO COMPARTILHADO -->
     <header class="header" id="header">
@@ -386,7 +185,7 @@
     </main>
 
     <!-- RODAPÉ COMPARTILHADO -->
-    <footer class="footer method-guide-footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
@@ -420,27 +219,6 @@
         </div>
     </footer>
 
-    <script>
-        const tabs = document.querySelectorAll('.nav-tab');
-        const sections = document.querySelectorAll('.content-section');
-
-        function showSection(sectionId) {
-            sections.forEach((section) => {
-                section.hidden = section.id !== sectionId;
-            });
-
-            tabs.forEach((tab) => {
-                const isActive = tab.dataset.section === sectionId;
-                tab.classList.toggle('active', isActive);
-                tab.setAttribute('aria-selected', String(isActive));
-                tab.tabIndex = isActive ? 0 : -1;
-            });
-        }
-
-        tabs.forEach((tab) => {
-            tab.addEventListener('click', () => showSection(tab.dataset.section));
-        });
-    </script>
     <script src="script.js"></script>
 
 </body>
