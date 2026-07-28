@@ -3,6 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainNav = document.querySelector('.main-nav');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    // Resolve a fragment identifier (e.g. "#section") to its element.
+    // querySelector throws a SyntaxError on invalid/empty selectors such as
+    // "#"; catch it so one bad anchor cannot abort the whole init handler.
+    const resolveTarget = (selector) => {
+        if (!selector || selector === '#') return null;
+        try {
+            return document.querySelector(selector);
+        } catch (error) {
+            console.warn(`Ignoring invalid anchor selector "${selector}":`, error);
+            return null;
+        }
+    };
+
     const setMenuState = (isOpen) => {
         if (!mobileToggle || !mainNav) return;
 
@@ -45,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         const sectionLinks = Array.from(navLinks).filter((link) => link.getAttribute('href')?.startsWith('#'));
         const sections = sectionLinks
-            .map((link) => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+            .map((link) => ({ link, section: resolveTarget(link.getAttribute('href')) }))
             .filter(({ section }) => section);
 
         if ('IntersectionObserver' in window && sections.length) {
@@ -66,8 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.addEventListener('click', (event) => {
-            const targetId = link.getAttribute('href');
-            const target = targetId ? document.querySelector(targetId) : null;
+            const target = resolveTarget(link.getAttribute('href'));
 
             if (!target) return;
 

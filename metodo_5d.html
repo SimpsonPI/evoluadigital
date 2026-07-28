@@ -425,6 +425,14 @@
         const sections = document.querySelectorAll('.content-section');
 
         function showSection(sectionId) {
+            const hasSection = Array.from(sections).some((section) => section.id === sectionId);
+            if (!sectionId || !hasSection) {
+                // Bail out instead of hiding every section when the target is
+                // missing, so a mislabelled tab never blanks the page.
+                console.warn(`No content section matches "${sectionId}"; ignoring tab activation.`);
+                return;
+            }
+
             sections.forEach((section) => {
                 section.hidden = section.id !== sectionId;
             });
