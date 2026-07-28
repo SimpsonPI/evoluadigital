@@ -1,0 +1,18 @@
+{
+  "name": "evoluadigital",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "license": "ISC",
+  "description": "Portfólio profissional e catálogo de serviços educacionais de Lincoln Simpson.",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.10",
+    "jsdom": "^26.1.0",
+    "vitest": "^4.1.10"
+  }
+}
